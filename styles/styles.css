@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    letter-spacing: 1.5px;
+}
+
+:root{
+    --pm1:#008c76ff;
+    --pm2:#9Ed9ccff;
+    --pm3:#faad94ff;
+    --pm4:#ffdde2ff;
+    --col-white:#fff;
+    --col-black:#000;
+    --col-black-light:#333;
+    --dimensions-logo:8rem;
+    --gutter-horizontal-medium:4rem;
+}
+
+.heading-tertiary {
+    font-size: 3.4rem;
+    text-transform: capitalize;
+    padding: 2rem;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 200;
+}
+.text {
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+
+/* styling the header part of the website */
+.header--1 {
+    display: flex;
+    align-items: center;
+    background-color: var(--pm1);
+    padding: .5rem 2rem;
+}
+
+.title{
+    margin-right: auto;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight:200;
+    color: var(--col-white);
+}
+.header__link,.header__link:visited,.header__link:link{
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: var(--col-white);
+    background-color: var(--pm3);
+    padding: 1rem 1.5rem;
+    border-radius: 100px;
+    transition: all .3s;
+    
+}
+
+.join-links>*:first-child{
+    margin-right: 1.5rem;
+}
+.header__link:hover {
+    box-shadow: 0 0 8px;
+}
+.nav__logo {
+    width: var(--dimensions-logo);
+    height: var(--dimensions-logo);
+    margin-right: auto;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    padding: .5rem 2rem;
+    /* background-color: var(--pm3); */
+    box-shadow: 0 1px;
+}
+.nav__list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.nav__item {
+    display: inline-block;
+    margin-right: 1rem;
+    /* box-shadow: 0 0 3px; */
+    padding: .4rem 1rem;
+    transition: all .4s;
+}
+
+.nav__item:hover {
+    transform: rotateZ(-15deg);
+}
+.nav__item--link, .nav__item--link:link, .nav__item--link:visited {
+    text-decoration: none;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: var(--col-black);
+    font-weight: 800;
+}
+
+/* designing the home section */
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    background-image:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url(../images/photographer.jpg);
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+}
+.home__title--main, .home__title--text {
+    color: var(--col-white);
+}
+.home__title--main {
+    font-size: 8rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+.home__title--text {
+    font-size: 2rem;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+.home__title--text span {
+    color: var(--pm3);
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 4px;
+
+}
+/* styling social sectiion of the website */
+.social__svg-container {
+    max-width: 1200px;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+.svg__icon {
+    --svg-dimension:6rem;
+    width: var(--svg-dimension);
+    height: var(--svg-dimension);
+    margin-right: 2.5rem;
+}
+
+.about{
+    padding: 2rem 4rem;
+    text-align: center;
+}
+/* styling the services section */
+.services__container {
+    max-width: 1300px;
+    /* background-color: #ccc; */
+    margin: 2rem auto;
+}
+.services__container::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.card{
+    
+    width: calc((100% - var(--gutter-horizontal-medium)*2)/3);
+    float: left;
+    box-shadow: 0 0 5px;
+    transition: all .4s;
+}
+
+.card:hover {
+    transform: rotate(5deg);
+}
+.services__container >*:not(:last-child){
+    margin-right: var(--gutter-horizontal-medium);
+}
+
+.card__image {
+    height: 300px;
+}
+.card__image--img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    clip-path: polygon(0 0,100% 0,100% 80%,0 100%,0 0);
+}
+
+.card__content--title {
+    padding: 1rem;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    color: var(--pm1);
+}
+
+.card__content--description {
+    padding: 1rem;
+    padding-top: 0;
+    text-align: justify;
+    font-size: 1.6rem;
+    letter-spacing: 1.3px;
+}
+.card__content--pricing {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem;
+    padding-top: 0;
+    font-weight: bold;
+}
+.previous {
+    color: red;
+    text-decoration: line-through;
+}
+.current {
+    color: var(--pm1);
+}
+.button {
+    padding: 1rem;
+    text-align: center;
+    /* background-color: var(--pm); */
+}
+
+.button--btn, .button--btn:link, .button--btn:visited {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: capitalize;
+    background-color: var(--pm2);
+    color: var(--col-white);
+    padding: .8rem 1.2rem;
+    border-radius: 6px;
+
+}
+
+.button--btn:hover {
+    background-color: var(--pm1);
+}
+
+.button__all{
+    padding: 1rem;
+    text-align: center;
+}
+.button__all--btn, .button__all--btn:link,.button__all--btn:hover {
+    display: inline-block;
+    font-size: 2rem;
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: var(--pm1);
+    color: var(--col-white);
+    border-radius: 5px;
+    font-weight: 300;
+    transition: all .3s;
+}
+.button__all--btn:hover{
+    transform: scale(1.2);
+}
